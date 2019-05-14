@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var users = ["Murali"];
+      users[1] = "Kuladeep";
+      //Push Will add a value to the last of the Array
+      users.push("Krishna");
+
+      //Unshift will add a value to the Begining Of the Array
+      users.unshift("Ram");
+
+      //Splice method will add and remove or Replace
+      users.splice(2, 0, "Ravi");
+
+      //POP will remvoe the Last Value of the Array
+      users.pop();
+
+      //shift will remove the first Value of the Array
+      users.shift();
+
+      users.sort();
+      users.reverse();
+
+      for (i = 0; i < users.length; i++) {
+        console.log(users[i]);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // "=" cannot be used in side the Object(Curly Braces)
+      //Each property and value should be separeted by ":"
+      //Each line of the property of an Object should End with ","
+      var person = {
+        lastName: "Krishna",
+        email: "murali@gmail.com"
+      };
+      person.firstName = "Murali";
+
+      person["age"] = 39;
+      console.log(person);
+
+      //   document.write(
+      //     "First Name : " +
+      //       person.firstName +
+      //       "<br> Last Name : " +
+      //       person.lastName
+      //   );
+
+      var obj = {
+        _id: "5cdad794682dec91061ddba8",
+        index: 0,
+        guid: "c14e271d-a473-4a1a-b88c-2e12bf1f833c",
+        isActive: false,
+        balance: "$1,780.53",
+        picture: "http://placehold.it/32x32",
+        age: 34,
+        eyeColor: "blue",
+        name: "Ferguson Avery",
+        gender: "male",
+        company: "CEPRENE",
+        email: "fergusonavery@ceprene.com",
+        phone: "+1 (908) 431-3972",
+        address: "285 Arlington Avenue, Norris, Virginia, 7035",
+        about:
+          "Aliqua cupidatat esse Lorem sint commodo. Nostrud sint duis veniam officia ea. Minim ea ullamco laborum laborum nisi et ex fugiat velit occaecat tempor ex ullamco excepteur. Aliqua deserunt amet cupidatat qui culpa qui pariatur consectetur aliqua magna deserunt Lorem. Officia incididunt incididunt veniam incididunt laborum commodo ad elit et do voluptate.\r\n",
+        registered: "2014-02-26T08:38:32 -06:-30",
+        latitude: -16.071205,
+        longitude: -167.956866
+      };
+
+      for (a in obj) {
+        console.log(obj[a]);
+        if (a != "about" && a != "address")
+          document.write(a + " : " + obj[a] + "<br>");
+      }
+      document.write("My Name : Murali");
+    </script>
+  </body>
+</html>
