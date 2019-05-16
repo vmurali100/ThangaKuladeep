@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onmouseover="calculate(10)">Click</button>
+    <input type="text" o="calculate(5)" />
+    <script>
+      //Definition or Creataing a function
+      //num is called arguments or params
+
+      var calculate = function(num) {
+        var a = 1;
+        for (i = 1; i <= num; i++) {
+          // a = a + i;
+          // a += i;
+          // a = a * i;
+          a *= i;
+        }
+
+        console.log(a);
+      };
+      //   function calculate(num) {
+
+      //   }
+
+      //calling the function or Invoking the function
+      //   calculate(20);
+    </script>
+  </body>
+</html>

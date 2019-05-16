@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label>
+      Fname :
+    </label>
+    <input type="text" id="Fname" /><br />
+    <label>
+      lname :
+    </label>
+    <input type="text" id="Lname" /><br />
+    <label>
+      Company :
+    </label>
+    <input type="text" id="Compny" /><br />
+    <label>
+      Des :
+    </label>
+    <input type="text" id="des" /><br />
+    <label>
+      Tech :
+    </label>
+    <input type="text" id="tech" /><br />
+    <label>
+      Age :
+    </label>
+    <input type="number" id="Age" /><br />
+    <button onclick="getData()">Submit</button>
+    <hr />
+    <div onclick="showBack()" id="demo"></div>
+    <script>
+      var person = {
+        Fname: "Kuladeep",
+        Lname: "Chinta",
+        Age: "25",
+        Compny: "TCS"
+      };
+
+      (person.tech = "SQL"), (person["des"] = "DBA");
+
+      function displayINForm(data) {
+        for (k in data) {
+          if (k != "Age") console.log(data[k]);
+          document.getElementById(k).value = data[k];
+        }
+      }
+      displayINForm(person);
+
+      function getData() {
+        updatedPerson = {};
+        for (a in person) {
+          updatedPerson[a] = document.getElementById(a).value;
+        }
+        console.log(updatedPerson);
+        displayPerson(updatedPerson);
+      }
+      function displayPerson(data) {
+        var result = "";
+        for (a in data) {
+          result += a + " : " + data[a] + "<br>";
+        }
+        document.getElementById("demo").innerHTML = result;
+        clearForm();
+      }
+
+      function clearForm() {
+        for (a in person) {
+          document.getElementById(a).value = "";
+        }
+      }
+
+      function showBack() {
+        displayINForm(updatedPerson);
+      }
+      //   document.getElementById('Fname').value = person.Fname
+    </script>
+  </body>
+</html>
