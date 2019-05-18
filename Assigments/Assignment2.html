@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm"></div>
+          <div class="col-sm">
+            <form>
+              <div class="form-group">
+                <label for="fname">First Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="fname"
+                  placeholder="Enter First Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="lname"
+                  placeholder="Last Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="tel">Tel</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tel"
+                  placeholder="Tel"
+                />
+              </div>
+              <div class="form-group">
+                <label for="address">Address</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="address"
+                  placeholder="Address"
+                />
+              </div>
+              <div class="form-group">
+                <label for="city">City</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="city"
+                  placeholder="City"
+                />
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="state"
+                  placeholder="state"
+                />
+              </div>
+              <div class="form-group">
+                <label for="Zip">Zip</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="zip"
+                  placeholder="Zip"
+                />
+              </div>
+
+              <button
+                type="button"
+                class="btn btn-primary"
+                onclick="displayPersons()"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <div class="col-sm">
+            <div id="demo" onclick="displayBack()"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var persons = [];
+      var person = {
+        fname: "Chiquita",
+        lname: "Trim",
+        tel: "(818)477-1920",
+        address: "5239 Dolor Dr",
+        city: "Neenah",
+        state: "MI",
+        zip: 17108
+      };
+
+      function showPersonInfo(person) {
+        for (a in person) {
+          document.getElementById(a).value = person[a];
+        }
+      }
+      showPersonInfo(person);
+
+      function displayPersons() {
+        updatedObj = {};
+        for (a in person) {
+          updatedObj[a] = document.getElementById(a).value;
+        }
+        persons.push(updatedObj);
+        displayAllPersons(persons);
+        clearForm();
+      }
+
+      function clearForm() {
+        for (a in person) {
+          document.getElementById(a).value = "";
+        }
+      }
+
+      function displayBack() {
+        showPersonInfo(updatedObj);
+      }
+
+      function displayAllPersons(persons) {
+        document.getElementById("demo").innerHTML = "";
+        for (i = 0; i < persons.length; i++) {
+          var div = document.createElement("div");
+          var result = "";
+          var check = false;
+          for (a in persons[i]) {
+            if (persons[i][a] == "") {
+              check = true;
+            }
+            result += a + " : " + persons[i][a] + "<br>";
+          }
+          if (check != true) {
+            div.innerHTML = result;
+            document.getElementById("demo").appendChild(div);
+          } else {
+            alert("PLease Enter ALL the fields");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
