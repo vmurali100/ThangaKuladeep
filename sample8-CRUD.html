@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <table class="table">
+        <thead>
+          <th>First Name</th>
+          <th>Last Name</th>
+        </thead>
+        <tbody id="myTable"></tbody>
+      </table>
+    </div>
+    <script>
+      var users = [
+        {
+          fname: "Tasheis",
+          lname: "Clay"
+        },
+        {
+          fname: "Kash",
+          lname: "Marina"
+        },
+        {
+          fname: "Anli",
+          lname: "Breiter"
+        },
+        {
+          fname: "Kassaundra",
+          lname: "Mendoza"
+        },
+        {
+          fname: "Kinnell",
+          lname: "Pick"
+        }
+      ];
+
+      function display() {
+        for (i = 0; i < users.length; i++) {
+          var tr = document.createElement("tr");
+          //   var td = document.createElement("td");
+          //   td.innerHTML = users[i].fname;
+          //   tr.appendChild(td);
+
+          //   var td2 = document.createElement("td");
+          //   td2.innerHTML = users[i].lname;
+          //   tr.appendChild(td2);
+          for (a in users[3]) {
+            var td = document.createElement("td");
+            td.innerHTML = users[i][a];
+            tr.appendChild(td);
+          }
+
+          document.getElementById("myTable").appendChild(tr);
+        }
+      }
+
+      display();
+    </script>
+  </body>
+</html>

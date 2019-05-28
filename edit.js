@@ -25,7 +25,19 @@ function clearForm() {
 selectedCheck = [];
 function selectCheck(i) {
   selectedCheck.push(i);
-
+  isExist = false;
+  var isindex;
+  for (j = 0; j < selectedCheck.length; j++) {
+    if (selectCheck[j] == i) {
+      isExist = true;
+      isindex = j;
+    }
+  }
+  if (isExist == false) {
+    selectedCheck.push();
+  } else {
+    selectedCheck.splice(isindex, 1);
+  }
   var dup = findDuplicate(selectedCheck);
   if (dup[0] == i) {
     selectedCheck.splice(i, 1);

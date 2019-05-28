@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="addName()">Add A Name First</button>
+    <button onclick="addNameFirst()">Add A Name Last</button>
+    <button onclick="addNameCenter()">Add A Name Center</button>
+
+    <button onclick="deleteFirst()">Delete First</button>
+    <button onclick="deleteLast()">Delete Last</button>
+    <button onclick="deleteCenter()">Delete Center</button>
+
+    <button onclick="sortArray()">Sort</button>
+    <button onclick="reverseArray()">Reverse</button>
+
+    <div id="demo"></div>
+    <script>
+      var users = ["Ram", "Ravi", "Kiran", "Murali"];
+
+      function display() {
+        var allNames = "";
+        for (i = 0; i < users.length; i++) {
+          allNames = allNames + users[i] + "<br>";
+        }
+
+        document.getElementById("demo").innerHTML = allNames;
+      }
+
+      display();
+
+      //Add Name in Begining
+      function addName() {
+        users.unshift("Murali Krihsna"); // TO add a value
+        display(); // TO show the latest Value
+      }
+
+      function addNameFirst() {
+        users.push("Murali Krihsna"); // TO add a value
+        display(); // TO show the latest Value
+      }
+
+      function addNameCenter() {
+        users.splice(2, 0, "Murali Krihsna"); // TO add a value
+        display(); // TO show the latest Value
+      }
+
+      function deleteFirst() {
+        users.shift();
+        display(); // TO show the latest Value
+      }
+
+      function deleteLast() {
+        users.pop();
+        display(); // TO show the latest Value
+      }
+
+      function deleteCenter() {
+        users.splice(2, 1);
+        display(); // TO show the latest Value
+      }
+
+      function sortArray() {
+        users.sort();
+        display(); // TO show the latest Value
+      }
+
+      function reverseArray() {
+        users.reverse();
+        display(); // TO show the latest Value
+      }
+    </script>
+  </body>
+</html>
